@@ -3,8 +3,8 @@
 using namespace std;
 
 int main() {
-	float a, x, epsilon;
-	float y0, y1;
+	double a, x, epsilon;
+	double y0, y1;
 	int counter;
 
 	setlocale(0, "russian");
@@ -20,10 +20,9 @@ int main() {
 		y1 = 0.5 * (y0 + x / y0);
 		counter = 2;
 		while (fabs(pow(y1, 2) - pow(y0, 2)) >= epsilon) {
-			cout << "Условие НЕ выполняется для члена последовательности " << y1 << " под номером " << counter << endl;
 			y0 = y1;
 			y1 = 0.5 * (y0 + x / y0);
-			counter = counter++;
+			counter = counter + 1;
 		}
 		cout << "Условие выполняется для члена последовательности " << y1 << " под номером " << counter << endl;
 	}
